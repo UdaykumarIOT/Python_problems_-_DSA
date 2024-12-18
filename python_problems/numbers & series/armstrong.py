@@ -1,8 +1,15 @@
-
+def integer_len(num : int) -> int:
+    count=0
+    while num != 0:
+        num //= 10
+        count += 1
+    return count
+    
 def armstrong(num:int) -> bool:
     sum ,temp = 0, num
+    length = integer_len(num)
     while temp != 0:
-        sum += (temp % 10) ** 3
+        sum += (temp % 10) ** length
         temp //= 10
     return sum == num
 
